@@ -1,19 +1,31 @@
+import java.util.Random;
 
 public class Vault {
-private String codeVault = "test";
-	
-	
+public int codeVault;
+
 	Vault() {
+		Random random = new Random();
+		codeVault = random.nextInt(1000000);
 		
 	}
 	
 	
-	public void setCode(String code) {
+	public void setCode(int code) {
 		codeVault = code;
-		System.out.println("Code is now "+code);
+		System.out.println("code is now "+code);
 
 	}
-	public static void main(String[] args) {
-		
+	
+	public boolean tryCode(int code) {
+		if(code == codeVault) {
+			System.out.println("code worked");
+			return true;
+		}
+		else {
+			//System.out.println("code didn't work");
+			return false;
+		}		
 	}
+	
+
 }
